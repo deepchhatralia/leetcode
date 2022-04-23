@@ -1,16 +1,16 @@
 class Solution {
-    public List<Integer> getRow(int rowIndex) {        
-        List<List<Integer>> main = new ArrayList<>();
-        List<Integer> row = new ArrayList<>();
-        row.add(1);
-        main.add(row);
-        
+    public List<Integer> getRow(int rowIndex) {     
         if(rowIndex == 1){
             List<Integer> temp = new ArrayList<>();
             temp.add(1);
             temp.add(1);
             return temp;
         }
+        
+        List<List<Integer>> main = new ArrayList<>();
+        List<Integer> row = new ArrayList<>();
+        row.add(1);
+        main.add(row);
         
         for(int i = 1 ; i <= rowIndex ; i++){
             List<Integer> prev = main.get(i-1);
