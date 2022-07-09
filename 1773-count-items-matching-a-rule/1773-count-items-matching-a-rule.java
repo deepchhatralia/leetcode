@@ -9,9 +9,8 @@ class Solution {
             what = 2;
         
         for(int i = 0 ; i < items.size() ; i++){
-            if(items.get(i).get(what).equals(ruleValue)){
+            if(items.get(i).get(what).equals(ruleValue))
                 count++;   
-            }
         }
       
         return count;
