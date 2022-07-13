@@ -1,5 +1,2 @@
 update Salary
-set sex = CASE sex
-            WHEN 'm' then 'f'
-            ELSE 'm'
-        END
+set sex = if(sex='m','f','m')
