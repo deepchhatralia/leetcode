@@ -39,19 +39,28 @@ class Compute {
     
     public static int missingNumber(int A[], int N)
     {
-         int max = -1, sum = 0, sum2 = 0;
+        //  int max = -1, sum = 0, sum2 = 0;
 
-        for(int i = 0 ; i < A.length ; i++){
-            if(A[i] > max)
-                max = A[i];
+        // for(int i = 0 ; i < A.length ; i++){
+        //     if(A[i] > max)
+        //         max = A[i];
 
-            sum += A[i];
-        }
+        //     sum += A[i];
+        // }
     
-        for(int i = 1 ; i <= max ; i++){
-            sum2 += i;
-        }
+        // for(int i = 1 ; i <= max ; i++){
+        //     sum2 += i;
+        // }
 
-        return sum2 - sum == 0 ? max + 1 : sum2 - sum;
+        // return sum2 - sum == 0 ? max + 1 : sum2 - sum;
+        
+        int expected = (N * (N + 1)) / 2;
+        int actual = 0;
+        
+        for(int i = 0 ; i < N ; i++){
+            actual += A[i];
+        }
+        
+        return expected - actual == 0 ? N + 1 : expected - actual;
     }
 }
