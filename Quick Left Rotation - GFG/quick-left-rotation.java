@@ -14,30 +14,16 @@ class Solution
     {
         k = k % n;
         
-        int i = 0, j = k - 1;
+        reverse(0, k-1, arr);
         
-        while(i < j){
-            long temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            
-            i++;
-            j--;
-        }
+        reverse(k, n-1, arr);
         
-        i = k;
-        j = n - 1;
-        while(i < j){
-            long temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            
-            i++;
-            j--;
-        }
+        reverse(0, n-1, arr);
+    }
+    
+    void reverse(int a, int b, long arr[]){
+        int i = a, j = b;
         
-        i = 0;
-        j = n - 1;
         while(i < j){
             long temp = arr[i];
             arr[i] = arr[j];
