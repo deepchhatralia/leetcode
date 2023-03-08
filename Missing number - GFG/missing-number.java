@@ -61,6 +61,6 @@ class Compute {
             actual += A[i];
         }
         
-        return expected - actual == 0 ? N + 1 : expected - actual;
+        return expected - actual;
     }
 }
