@@ -37,16 +37,25 @@ class Solution {
     int rowWithMax1s(int arr[][], int n, int m) {
         int index = -1, max = -1;
         
-        for(int i = 0 ; i < n ; i++){
-            int sum = -1;
-            for(int j = 0 ; j < m ; j++){
+        // for(int i = 0 ; i < n ; i++){
+        //     int sum = -1;
+        //     for(int j = 0 ; j < m ; j++){
+        //         if(arr[i][j] == 1){
+        //             sum++;
+        //         }
+        //     }
+        //     if(sum > max){
+        //         max = sum;
+        //         index = i;
+        //     }
+        // }
+        
+        
+        for(int j = 0 ; j < m ; j++){
+            for(int i = 0 ; i < n ; i++){
                 if(arr[i][j] == 1){
-                    sum++;
+                    return i;
                 }
-            }
-            if(sum > max){
-                max = sum;
-                index = i;
             }
         }
         
