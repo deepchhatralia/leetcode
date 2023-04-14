@@ -58,18 +58,33 @@ class Solution
 {
     int getMiddle(Node head)
     {
-         Node one = head;
-         Node two = head;
+        //  Node one = head;
+        //  Node two = head;
          
-         while(two.next != null && two != null){
-             one = one.next;
+        //  while(two.next != null && two != null){
+        //      one = one.next;
              
-             if(two.next.next == null){
-                 two = two.next;
-             }else{
-                 two = two.next.next;
-             }
-         }
-         return one.data;
+        //      if(two.next.next == null){
+        //          two = two.next;
+        //      }else{
+        //          two = two.next.next;
+        //      }
+        //  }
+        //  return one.data;
+        
+        
+        
+        Node index = head;
+        int counter = 0;
+        Node mid = head;
+        
+        while(index != null){
+            if(counter % 2 != 0){
+                mid = mid.next;
+            }
+            counter++;
+            index = index.next;
+        }
+        return mid.data;
     }
 }
