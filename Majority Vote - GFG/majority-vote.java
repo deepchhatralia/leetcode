@@ -57,21 +57,37 @@ class GFG {
 
 class Solution {
     public static ArrayList<Integer> Solve(int n, int[] arr) {
-        int count = 0;
         ArrayList<Integer> list = new ArrayList<>();
         
-        for(int i = 0 ; i < n ; i++){
-            count = 0;
-            for(int j = 0 ; j < n ; j++){
-                if(list.contains(arr[i]))
-                    break;
+        // int count = 0;
+        
+        // for(int i = 0 ; i < n ; i++){
+        //     count = 0;
+        //     for(int j = 0 ; j < n ; j++){
+        //         if(list.contains(arr[i]))
+        //             break;
                 
-                if(arr[i] == arr[j])
-                    count++;
-            }
-            if(count > n/3)
-                list.add(arr[i]);
+        //         if(arr[i] == arr[j])
+        //             count++;
+        //     }
+        //     if(count > n/3)
+        //         list.add(arr[i]);
+        // }
+        
+        
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        
+        for(int i = 0 ; i < n ; i++){
+            hm.put(arr[i], hm.getOrDefault(arr[i], 0) + 1);
         }
+        
+        for (int key : hm.keySet()) {
+            if(hm.get(key) > (n / 3))
+                list.add(key);
+        }
+        
+        
+        
         if(list.size() == 0)
             list.add(-1);
             
