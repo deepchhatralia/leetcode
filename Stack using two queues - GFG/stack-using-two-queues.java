@@ -54,6 +54,7 @@ class Queues
     //Function to pop an element from stack using two queues. 
     int pop()
     {
+        int temp = -1;            
         if(q1.size() == 1){
             return q1.remove();
         }
@@ -61,25 +62,25 @@ class Queues
             return q2.remove();
         }
 	    if(q1.size() != 0){
-	        while(!q1.isEmpty()){
-	            int temp = q1.remove();
-	            q2.add(temp);
-	            
-	            if(q1.size() == 1){
-	                return q1.remove();
-	            }
-	        }
+	        temp = perform(q1, q2);
 	    } else{
-	        while(!q2.isEmpty()){
-	            int temp = q2.remove();
-	            q1.add(temp);
-	            
-	            if(q2.size() == 1){
-	                return q2.remove();
-	            }
-	        }
+	        temp = perform(q2, q1);
 	    }
-	    return -1;
+	    return temp;
+    }
+    
+    static int perform(Queue<Integer> a, Queue<Integer> b){
+        int val = -1;
+        while(!a.isEmpty()){
+            int temp = a.remove();
+            b.add(temp);
+            
+            if(a.size() == 1){
+                val = a.remove();
+                break;
+            }
+        }
+        return val;
     }
 	
 }
