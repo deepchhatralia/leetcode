@@ -92,10 +92,13 @@ class Solution
             if(slow == fast){
                 Node index = head;
                 
+                // find the start of the loop
                 while(index != slow){
                     slow = slow.next;
                     index = index.next;
                 }
+                // after finding the starting node of the loop, count the number of nodes till 
+                // slow again comes to the start of loop (i.e. index node)
                 int count = 1;
                 slow = slow.next;
                 while(slow != index){
