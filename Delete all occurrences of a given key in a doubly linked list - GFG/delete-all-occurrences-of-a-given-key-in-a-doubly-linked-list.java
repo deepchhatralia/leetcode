@@ -91,7 +91,7 @@ class Solution {
         Node index = head;
         
         
-        if(index == null || ){
+        if(index == null || (index.data == x && index.next == null)){
             return null;
         }
         
