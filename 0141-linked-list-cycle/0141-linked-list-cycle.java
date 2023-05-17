@@ -12,6 +12,7 @@
 public class Solution {
     public boolean hasCycle(ListNode head) {
         // tortoise approach
+        
         if(head == null || head.next == null)
             return false;
         
@@ -34,14 +35,14 @@ public class Solution {
 //         return true;
         
         
-        HashMap<ListNode,Integer> hm = new HashMap<>();
+        HashSet<ListNode> hs = new HashSet<>();
         ListNode index = head;
         
         while(index.next != null){
-            if(hm.getOrDefault(index,0) != 0)
+            if(hs.contains(index))
                 return true;
             
-            hm.put(index, 1);
+            hs.add(index);
             index = index.next;
         }
         return false;
