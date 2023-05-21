@@ -67,27 +67,49 @@ class Solution
         //     }
         // }
         
-        int left = 0, right = 0, index = 0;
         
-        while(left < n && right < m){
-            if(arr1[left] <= arr2[right]){
-                arr[index++] = arr1[left];
-                left++;
-            }else{
-                arr[index++] = arr2[right];
+        
+        // int left = 0, right = 0, index = 0;
+        
+        // while(left < n && right < m){
+        //     if(arr1[left] <= arr2[right]){
+        //         arr[index++] = arr1[left];
+        //         left++;
+        //     }else{
+        //         arr[index++] = arr2[right];
+        //         right++;
+        //     }
+        // }
+        
+        // while(left < n) arr[index++] = arr1[left++];
+        // while(right < m) arr[index++] = arr2[right++];
+        
+        // for(int i = 0 ; i < n+m ; i++){
+        //     if(i < n){
+        //         arr1[i] = arr[i];
+        //     }else{
+        //         arr2[i-n] = arr[i];
+        //     }
+        // }
+        
+        
+        
+        int left = n-1, right = 0;
+        
+        while(left >= 0 && right < m){
+            if(arr1[left] > arr2[right]){
+                long temp = arr1[left];
+                arr1[left] = arr2[right];
+                arr2[right] = temp;
+                
+                left--;
                 right++;
-            }
-        }
-        
-        while(left < n) arr[index++] = arr1[left++];
-        while(right < m) arr[index++] = arr2[right++];
-        
-        for(int i = 0 ; i < n+m ; i++){
-            if(i < n){
-                arr1[i] = arr[i];
             }else{
-                arr2[i-n] = arr[i];
+                break;
             }
         }
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        
     }
 }
