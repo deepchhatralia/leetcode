@@ -51,14 +51,37 @@ class Solution
     {
         long arr[] = new long[n+m];
         
-        for(int i = 0 ; i < n+m ; i++){
-            if(i < n){
-                arr[i] = arr1[i];
+        // for(int i = 0 ; i < n+m ; i++){
+        //     if(i < n){
+        //         arr[i] = arr1[i];
+        //     }else{
+        //         arr[i] = arr2[i-n];
+        //     }
+        // }
+        // Arrays.sort(arr);
+        // for(int i = 0 ; i < n+m ; i++){
+        //     if(i < n){
+        //         arr1[i] = arr[i];
+        //     }else{
+        //         arr2[i-n] = arr[i];
+        //     }
+        // }
+        
+        int left = 0, right = 0, index = 0;
+        
+        while(left < n && right < m){
+            if(arr1[left] <= arr2[right]){
+                arr[index++] = arr1[left];
+                left++;
             }else{
-                arr[i] = arr2[i-n];
+                arr[index++] = arr2[right];
+                right++;
             }
         }
-        Arrays.sort(arr);
+        
+        while(left < n) arr[index++] = arr1[left++];
+        while(right < m) arr[index++] = arr2[right++];
+        
         for(int i = 0 ; i < n+m ; i++){
             if(i < n){
                 arr1[i] = arr[i];
