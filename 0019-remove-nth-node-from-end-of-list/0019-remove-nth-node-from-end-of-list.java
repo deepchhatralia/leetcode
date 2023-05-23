@@ -27,14 +27,6 @@ class Solution {
             head = null;
             return head;
         }
-        if(head.next.next == null){
-            if(n == 1)
-                head.next = null;
-            else
-                head = head.next;
-            
-            return head;
-        }
         
 //         int count = 0, size = getSize(head);
 //         if(size == n){
