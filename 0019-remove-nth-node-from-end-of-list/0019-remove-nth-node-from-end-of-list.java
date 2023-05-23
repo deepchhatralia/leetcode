@@ -23,10 +23,7 @@ class Solution {
 //     }
     
     public ListNode removeNthFromEnd(ListNode head, int n){
-        if(head.next == null){
-            head = null;
-            return head;
-        }
+        
         
 //         int count = 0, size = getSize(head);
 //         if(size == n){
