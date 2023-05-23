@@ -45,7 +45,6 @@ class Solution {
         
         ListNode dummy = new ListNode();
         dummy.next = head;
-        dummy.val = head.val;
         
         ListNode slow = dummy;
         ListNode fast = dummy;
