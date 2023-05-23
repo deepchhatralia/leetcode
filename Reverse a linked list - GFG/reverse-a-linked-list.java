@@ -67,7 +67,7 @@ class Node {
 
 class Solution
 {
-    //Function to reverse a linked list.
+    //Function to reverse a linked list using Recursion.
     Node reverseList(Node head)
     {
         if (head == null||head.next==null)
