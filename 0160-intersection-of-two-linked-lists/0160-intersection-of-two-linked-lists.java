@@ -14,16 +14,35 @@ public class Solution {
         ListNode first = headA;
         ListNode second = headB;
         
-        while(first != null){
-            while(second != null){
-                if(first == second)
-                    return first;
+        
+        // Brute force
+//         while(first != null){
+//             while(second != null){
+//                 if(first == second)
+//                     return first;
                 
-                second = second.next;
-            }
-            second = headB;
+//                 second = second.next;
+//             }
+//             second = headB;
+//             first = first.next;
+//         }
+        
+        HashMap<ListNode,Integer> hm = new HashMap<>();
+        
+        while(first != null){
+            hm.put(first,first.val);
+            
             first = first.next;
         }
+        
+        while(second != null){
+            if(hm.getOrDefault(second,0) != 0){
+                return second;
+            }
+            second = second.next;
+        }
+        
+        
         
         return null;
     }
