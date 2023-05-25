@@ -27,23 +27,62 @@ public class Solution {
 //             first = first.next;
 //         }
         
-        HashMap<ListNode,Integer> hm = new HashMap<>();
+        
+        
+        // Brute force 2
+        int len1 = 0, len2 = 0;
         
         while(first != null){
-            hm.put(first,first.val);
-            
+            len1 += 1;
             first = first.next;
         }
+        first = headA;
         
         while(second != null){
-            if(hm.getOrDefault(second,0) != 0){
-                return second;
-            }
+            len2 += 1;
             second = second.next;
         }
+        second = headB;
+        
+        int diff = Math.abs(len1 - len2);
+        
+        if(len1 > len2){
+            for(int i = 0 ; i < diff ; i++){
+                first = first.next;
+            }
+        }else{
+            for(int i = 0 ; i < diff ; i++){
+                second = second.next;
+            }
+        }
+        
+        while(first != second){
+            first = first.next;
+            second = second.next;
+        }
+        return first;
+        
+        
+//         HashMap<ListNode,Integer> hm = new HashMap<>();
+        
+//         while(first != null){
+//             hm.put(first,first.val);
+            
+//             first = first.next;
+//         }
+        
+//         while(second != null){
+//             if(hm.getOrDefault(second,0) != 0){
+//                 return second;
+//             }
+//             second = second.next;
+//         }
         
         
         
-        return null;
+        
+        
+        
+        // return null;
     }
 }
