@@ -39,7 +39,9 @@ class Solution {
         // return head;
 
         
-        k = k % getSize(head);
+        // doing the below step so that if k > size, than no need to rotate k times just rotate it for k % size
+        k = k % getSize(head); 
+        
         k = getSize(head) - k;
         
         if(k == 0)
