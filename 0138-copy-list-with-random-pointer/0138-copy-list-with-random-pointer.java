@@ -32,10 +32,10 @@ class Solution {
         result = temp.next;
         
         
+        Node indexTemp = index;
+        Node resultTemp = result;
         // link new linked list between the nodes of old linked list
         while(index != null){
-            Node indexTemp = index;
-            Node resultTemp = result;
             
             resultTemp = resultTemp.next;
             indexTemp = index.next;
