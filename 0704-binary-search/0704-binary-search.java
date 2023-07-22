@@ -1,4 +1,5 @@
 class Solution {
+    // recursion
     public int bs(int arr[], int left, int right, int target){
         if(left > right)
             return -1;
